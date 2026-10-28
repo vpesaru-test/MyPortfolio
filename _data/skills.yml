@@ -3,7 +3,7 @@
 # ─────────────────────────────────────────────────────────────
 
 - group: Automation Tools
-  items: [Selenium 2.0 / WebDriver, Appium, Protractor, XCTest, Espresso, Rest I/O]
+  items: [Playwright, Selenium 2.0 / WebDriver, Appium, Protractor, XCTest, Espresso, Rest I/O]
 
 - group: API & Web Services
   items: [Postman, RestAssured, SOAP UI, ReadyAPI, Swagger UI, Newman]
