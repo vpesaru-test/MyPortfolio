@@ -95,6 +95,7 @@
   kind: professional
 
 - name: Certified DevOps QA Engineer
-  issuer: DevOps-QA Certification Body
-  date: Professional
+  issuer: International DevOps Certification Academy
+  date: Mar 2020
   kind: professional
+  file: devops-qa-engineer.pdf
