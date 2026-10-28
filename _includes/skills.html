@@ -1,0 +1,16 @@
+<section id="skills">
+  {%- assign heading = "Technical" -%}{%- assign heading_em = "Skills" %}
+{% include section-header.html %}
+  <div class="skills-grid">
+    {%- for g in site.data.skills %}
+    <div class="skill-group">
+      <div class="skill-group-title">{{ g.group | escape }}</div>
+      <div class="skill-pills">
+        {%- for s in g.items %}
+        <span class="skill-pill">{{ s | escape }}</span>
+        {%- endfor %}
+      </div>
+    </div>
+    {%- endfor %}
+  </div>
+</section>

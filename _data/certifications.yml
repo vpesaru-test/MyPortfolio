@@ -1,0 +1,71 @@
+# ─────────────────────────────────────────────────────────────
+# Certifications & learning — shown in this order.
+#
+# "kind" sets the colour of the dot on each card:
+#   ai           → teal   (AI / LLM certifications)
+#   aws          → amber  (AWS certifications)
+#   course       → grey   (short courses)
+#   professional → orange (professional testing credentials)
+# "date" can be a month/year or a word such as "Professional".
+# "url" is optional — add a credential link to make the card clickable.
+# ─────────────────────────────────────────────────────────────
+
+- name: Claude 101
+  issuer: Anthropic
+  date: Feb 2026
+  kind: ai
+
+- name: "AI Fluency: Framework & Foundations"
+  issuer: Anthropic
+  date: Feb 2026
+  kind: ai
+
+- name: AI For Everyone
+  issuer: DeepLearning.AI
+  date: May 2026
+  kind: ai
+
+- name: AI for Strategic Decision Intelligence
+  issuer: Edureka
+  date: Mar 2026
+  kind: ai
+
+- name: Start Writing Prompts like a Pro
+  issuer: Google
+  date: Feb 2026
+  kind: ai
+
+- name: AWS Certified AI Practitioner
+  issuer: Amazon Web Services
+  date: Sep 2025
+  kind: aws
+
+- name: AWS Certified Cloud Practitioner
+  issuer: Amazon Web Services
+  date: Dec 2023
+  kind: aws
+
+- name: "Cloud Concepts: Hybrid Cloud"
+  issuer: LinkedIn Learning
+  date: Mar 2024
+  kind: course
+
+- name: What is Generative AI?
+  issuer: LinkedIn Learning
+  date: Jan 2024
+  kind: course
+
+- name: Accredited Software Tester (ASTC)
+  issuer: ASTQB / GASQ
+  date: Professional
+  kind: professional
+
+- name: Accredited Software Test Automator (ASTAC)
+  issuer: ASTQB / GASQ
+  date: Professional
+  kind: professional
+
+- name: Certified DevOps QA Engineer
+  issuer: DevOps-QA Certification Body
+  date: Professional
+  kind: professional

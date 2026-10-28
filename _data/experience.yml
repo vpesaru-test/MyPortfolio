@@ -1,0 +1,68 @@
+# ─────────────────────────────────────────────────────────────
+# Work experience — newest first.
+#
+# Tags come in three tiers, which control the pill colour:
+#   primary   → orange (core tools for this role)
+#   secondary → teal
+#   other     → neutral
+# ─────────────────────────────────────────────────────────────
+
+- company: Truist Bank
+  location: United States
+  role: Software Engineer III in Test
+  period: Apr 2023 — Present
+  description: >-
+    Lead QA engineering for mobile applications and backend services at a
+    top-10 US bank. Build comprehensive test documentation, automation
+    frameworks using Appium/Java/TestNG, and API validation suites with
+    RestAssured and Postman. Developed automation for AWS Lambda functions and
+    tested cloud-native services. Drove integration with Encore Core System via
+    targeted SQL validation and worked closely with product owners in
+    Agile/Scrum ceremonies.
+  tags:
+    primary: [Java, Appium, TestNG]
+    secondary: [RestAssured, Postman, AWS Lambda]
+    other: [C# / Visual Studio, Cucumber, Docker, GoCD, MySQL, XCode / AndroidStudio]
+
+- company: SVS Technologies / Backbase
+  location: Atlanta, GA
+  role: Senior Quality Assurance Engineer
+  period: Jul 2020 — Apr 2023
+  description: >-
+    Promoted to Senior QA after consistently delivering robust test coverage for
+    Digital Banking Services. Designed API regression frameworks using
+    ReadyAPI/Groovy for positive and negative scenario validation, native mobile
+    test frameworks using Appium/Java/TestNG, and cross-browser automation via
+    BrowserStack. Ensured accessibility compliance to AA standard using Sort
+    Site.
+  tags:
+    primary: [Selenium WebDriver, ReadyAPI / SOAP UI, Appium]
+    secondary: [Groovy, Protractor / Jasmine, BrowserStack]
+    other: [Jenkins, Maven, XCTest / Espresso, JIRA, Perfecto]
+
+- company: SVS Technologies / Backbase
+  location: Atlanta, GA
+  role: Software Quality Assurance Engineer
+  period: Sep 2016 — Jul 2020
+  description: >-
+    Built data-driven test frameworks with Selenium WebDriver and Java, executed
+    regression and functional testing with Cucumber, performed back-end
+    validation with SQL on MySQL and Oracle databases. Developed AngularJS
+    automation via Protractor/Jasmine and contributed to mobile app quality
+    across iOS and Android using simulators and emulators.
+  tags:
+    primary: [Java, Selenium WebDriver, Cucumber]
+    secondary: [TestNG, Oracle / MySQL]
+    other: [Protractor, BitBucket, Apache/Tomcat]
+
+- company: SE Missouri State University
+  location: Cape Girardeau, MO
+  role: Graduate Assistant (Part-Time)
+  period: Aug 2015 — Apr 2016
+  description: >-
+    Assisted faculty with graduate-level coursework and authored teaching
+    materials. Built an automation framework using UI Mapping and Hybrid
+    Framework techniques to track student activities. Maintained traceability
+    matrices and participated in project team meetings and status reporting.
+  tags:
+    other: [Oracle 11g, Quality Center, Agile, MS Excel]

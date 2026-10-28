@@ -1,0 +1,22 @@
+<section id="certifications">
+  {%- assign heading = "Certifications" -%}{%- assign heading_em = "& Learning" %}
+{% include section-header.html %}
+  <div class="certs-grid">
+    {%- for cert in site.data.certifications %}
+    {%- if cert.url %}
+    <a class="cert-card" href="{{ cert.url }}" target="_blank" rel="noopener">
+    {%- else %}
+    <div class="cert-card">
+    {%- endif %}
+      <div class="cert-badge cert-badge--{{ cert.kind | default: 'ai' }}"></div>
+      <div class="cert-year">{{ cert.date }}</div>
+      <div class="cert-name">{{ cert.name | escape }}</div>
+      <div class="cert-issuer">{{ cert.issuer | escape }}</div>
+    {%- if cert.url %}
+    </a>
+    {%- else %}
+    </div>
+    {%- endif %}
+    {%- endfor %}
+  </div>
+</section>

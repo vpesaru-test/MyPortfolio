@@ -1,0 +1,27 @@
+# ─────────────────────────────────────────────────────────────
+# Technical skills — one card per group, shown in this order.
+# ─────────────────────────────────────────────────────────────
+
+- group: Automation Tools
+  items: [Selenium 2.0 / WebDriver, Appium, Protractor, XCTest, Espresso, Rest I/O]
+
+- group: API & Web Services
+  items: [Postman, RestAssured, SOAP UI, ReadyAPI, Swagger UI, Newman]
+
+- group: Languages
+  items: [Java, Python, JavaScript, C#, Swift, Groovy, PL/SQL, Gherkin]
+
+- group: Testing Frameworks
+  items: [TestNG, JUnit, Cucumber, Jasmine, XCTest, Espresso]
+
+- group: CI/CD & DevOps
+  items: [Jenkins, GoCD, Maven, Ant, Docker, GitHub, BitBucket, SVN]
+
+- group: Databases
+  items: [MySQL, Oracle 11g/12c, SQL Server 2014, PL/SQL]
+
+- group: Test Management
+  items: [JIRA, HP ALM / QC, TFS, Rally, VersionOne]
+
+- group: Cloud & Mobile
+  items: [AWS (Certified), BrowserStack, Perfecto, iOS / Android, XCode, AndroidStudio, Splunk]

@@ -1,0 +1,32 @@
+<section id="experience">
+  {%- assign heading = "Professional" -%}{%- assign heading_em = "Experience" %}
+{% include section-header.html %}
+  <div class="exp-list">
+    {%- for job in site.data.experience %}
+    <div class="exp-item">
+      <div class="exp-meta">
+        <span class="exp-period">{{ job.period }}</span>
+        <div class="exp-company">{{ job.company | escape }}</div>
+        <div class="exp-location">{{ job.location | escape }}</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-role">{{ job.role | escape }}</div>
+        <p class="exp-desc">
+          {{ job.description | escape }}
+        </p>
+        <div class="exp-tags">
+          {%- for t in job.tags.primary %}
+          <span class="tag accent">{{ t | escape }}</span>
+          {%- endfor %}
+          {%- for t in job.tags.secondary %}
+          <span class="tag teal">{{ t | escape }}</span>
+          {%- endfor %}
+          {%- for t in job.tags.other %}
+          <span class="tag">{{ t | escape }}</span>
+          {%- endfor %}
+        </div>
+      </div>
+    </div>
+    {%- endfor %}
+  </div>
+</section>

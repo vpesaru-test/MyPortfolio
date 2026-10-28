@@ -1,0 +1,50 @@
+<section id="projects">
+  {%- assign heading = "Featured" -%}{%- assign heading_em = "Projects" %}
+{% include section-header.html %}
+  <div class="project-list">
+    {%- for project in site.data.projects %}
+    <article class="project-card">
+      <div class="project-head">
+        {%- if project.context %}
+        <span class="project-context">{{ project.context | escape }}</span>
+        {%- endif %}
+        <h3 class="project-title">
+          {%- if project.link %}<a href="{{ project.link }}" target="_blank" rel="noopener">{{ project.title | escape }} ↗</a>
+          {%- else %}{{ project.title | escape }}{% endif -%}
+        </h3>
+      </div>
+      <div class="project-body">
+        {%- if project.problem %}
+        <div class="project-block">
+          <div class="project-label">Problem</div>
+          <p>{{ project.problem | escape }}</p>
+        </div>
+        {%- endif %}
+        {%- if project.approach %}
+        <div class="project-block">
+          <div class="project-label">Approach</div>
+          <p>{{ project.approach | escape }}</p>
+        </div>
+        {%- endif %}
+        {%- if project.results %}
+        <div class="project-block project-results">
+          <div class="project-label">Results</div>
+          <ul>
+            {%- for r in project.results %}
+            <li>{{ r | escape }}</li>
+            {%- endfor %}
+          </ul>
+        </div>
+        {%- endif %}
+      </div>
+      {%- if project.tools %}
+      <div class="exp-tags">
+        {%- for t in project.tools %}
+        <span class="tag teal">{{ t | escape }}</span>
+        {%- endfor %}
+      </div>
+      {%- endif %}
+    </article>
+    {%- endfor %}
+  </div>
+</section>

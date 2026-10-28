@@ -1,0 +1,23 @@
+# ─────────────────────────────────────────────────────────────
+# Featured projects — the section appears on the site, and in the
+# nav, as soon as this list has at least one entry.
+#
+# Write each one as problem → approach → tools → results, and put
+# numbers in "results" wherever you can.
+#
+# Example (remove the leading "# " from each line to use it):
+#
+# - title: Bruno API Regression Suite
+#   context: Truist Bank · 2025
+#   problem: >-
+#     What was slow, risky, or missing before you started?
+#   approach: >-
+#     What you designed and built, and the key decisions you made.
+#   results:
+#     - Cut regression run time from X hours to Y minutes
+#     - Raised API coverage from X% to Y%
+#   tools: [Bruno, JavaScript, GitLab CI]
+#   link: https://github.com/vpesaru-test/your-repo   # optional
+# ─────────────────────────────────────────────────────────────
+
+[]

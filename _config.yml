@@ -1,0 +1,10 @@
+# Jekyll configuration. GitHub Pages builds this site automatically on every push.
+# Your content is in _data/ — you shouldn't need to change anything here.
+
+title: Vidyullatha Pesaru — Portfolio
+
+# Files that are part of the repo but shouldn't be published on the site
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

@@ -1,0 +1,43 @@
+# ─────────────────────────────────────────────────────────────
+# Profile — name, headline, hero section, and contact details.
+# ─────────────────────────────────────────────────────────────
+
+name: Vidyullatha Pesaru
+page_title: Senior QA Engineer                  # browser tab: "<name> — <page_title>"
+role: Senior QA Engineer & Test Architect       # small tag above the headline
+tagline: Senior QA Engineer · Test Automation Architect   # shown in the footer
+
+# Headline is split into three parts so the middle can be highlighted.
+headline:
+  before: "Bridging"
+  highlight: "Quality Engineering"
+  after: "with AI"
+
+# Badges under the headline
+badges:
+  - "☁ AWS Certified AI Practitioner"
+  - "✦ Claude 101 · Anthropic"
+  - "✦ AI Fluency · Anthropic"
+  - "✦ AI For Everyone · DeepLearning.AI"
+
+summary: >-
+  Over 10 years engineering test automation frameworks, mobile testing
+  pipelines, and API validation suites across banking, fintech, and healthcare
+  domains — now bringing AI into Quality Engineering with certifications from
+  AWS, Anthropic, and DeepLearning.AI.
+
+photo: /assets/images/profile.jpg
+
+# Stat boxes on the right of the hero. "suffix" is optional and shown in accent colour.
+stats:
+  - { value: "10", suffix: "+", label: "Years Experience" }
+  - { value: "3",               label: "Major Employers" }
+  - { value: "5",               label: "Domains Tested" }
+  - { value: "10", suffix: "+", label: "Certifications" }
+
+contact:
+  phone: "(737) 235-6759"
+  location: "United States"
+  linkedin: "https://www.linkedin.com/in/vidyullathapesaru"
+  email: ""      # fill in to show an email link in the hero and footer
+  github: ""     # e.g. https://github.com/vpesaru-test — shown when filled in
