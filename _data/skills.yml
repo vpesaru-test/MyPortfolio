@@ -6,7 +6,7 @@
   items: [Playwright, Selenium 2.0 / WebDriver, Appium, Protractor, XCTest, Espresso, Rest I/O]
 
 - group: API & Web Services
-  items: [Postman, RestAssured, SOAP UI, ReadyAPI, Swagger UI, Newman]
+  items: [Bruno, Postman, RestAssured, SOAP UI, ReadyAPI, Swagger UI, Newman]
 
 - group: Languages
   items: [Java, Python, JavaScript, C#, Swift, Groovy, PL/SQL, Gherkin]
