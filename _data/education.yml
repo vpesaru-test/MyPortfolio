@@ -1,13 +1,22 @@
 # ─────────────────────────────────────────────────────────────
 # Education — shown in this order.
+#
+# Optional fields (leave blank or delete to hide):
+#   gpa     → shown as a highlighted line, e.g. "GPA 3.8 / 4.0"
+#             or "First Class with Distinction (78%)"
+#   honors  → awards, assistantships, scholarships, honour societies
 # ─────────────────────────────────────────────────────────────
 
 - degree: M.S. Technology Management
   school: Southeast Missouri State University
   location: Cape Girardeau, MO, USA
   period: Jan 2015 – May 2016
+  gpa: ""
+  honors: ""
 
 - degree: B.Tech. Electronics & Computer Engineering
   school: Balaji Institute of Technology and Science (JNTU Hyderabad)
   location: India
   period: 2008 – 2012
+  gpa: ""
+  honors: ""

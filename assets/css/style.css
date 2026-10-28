@@ -624,3 +624,22 @@ a.cert-card { display: block; text-decoration: none; color: inherit; }
   .project-card { padding: 2rem 1.5rem; }
   .project-body { grid-template-columns: 1fr; gap: 1.25rem; }
 }
+
+/* Optional GPA / honours line on education cards */
+.edu-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 1rem;
+}
+.edu-gpa,
+.edu-honors {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+}
+.edu-gpa { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+.edu-honors { border-color: var(--teal); color: var(--teal); background: var(--teal-light); }
