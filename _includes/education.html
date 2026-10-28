@@ -25,17 +25,23 @@
   <h3 class="subsection-title">Certifications <span>&amp; Learning</span></h3>
   <div class="certs-grid">
     {%- for cert in site.data.certifications %}
-    {%- if cert.url %}
-    <a class="cert-card reveal" href="{{ cert.url }}" target="_blank" rel="noopener">
+    {%- assign cert_link = nil -%}
+    {%- if cert.url and cert.url != "" -%}{%- assign cert_link = cert.url -%}
+    {%- elsif cert.file and cert.file != "" -%}{%- assign cert_link = "assets/certificates/" | append: cert.file -%}{%- endif %}
+    {%- if cert_link %}
+    <a class="cert-card cert-card--link reveal" href="{{ cert_link }}" target="_blank" rel="noopener" aria-label="View certificate: {{ cert.name | escape }} ({{ cert.issuer | escape }})">
     {%- else %}
     <div class="cert-card reveal">
     {%- endif %}
       <span class="cert-dot cert-dot--{{ cert.kind | default: 'ai' }}" aria-hidden="true"></span>
-      <div>
+      <div class="cert-body">
         <div class="cert-name">{{ cert.name | escape }}</div>
         <div class="cert-meta">{{ cert.issuer | escape }} · <span>{{ cert.date }}</span></div>
+        {%- if cert_link %}
+        <span class="cert-view" aria-hidden="true">View certificate ↗</span>
+        {%- endif %}
       </div>
-    {%- if cert.url %}
+    {%- if cert_link %}
     </a>
     {%- else %}
     </div>

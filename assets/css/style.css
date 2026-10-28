@@ -617,3 +617,17 @@ h1 {
   .edu-card { flex-direction: column; }
   .hero-ctas .btn { flex: 1 1 auto; }
 }
+
+/* Clickable certificate cards (url or file set in _data/certifications.yml) */
+.cert-body { display: flex; flex-direction: column; }
+.cert-view {
+  margin-top: 0.55rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal);
+  transition: color 0.2s;
+}
+.cert-card--link { cursor: pointer; }
+.cert-card--link:hover .cert-view { color: var(--accent); }

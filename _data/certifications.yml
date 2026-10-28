@@ -7,7 +7,11 @@
 #   course       → grey   (short courses)
 #   professional → orange (professional testing credentials)
 # "date" can be a month/year or a word such as "Professional".
-# "url" is optional — add a credential link to make the card clickable.
+# To make a card clickable (opens in a new tab), add ONE of:
+#   url:  link to the online credential, e.g. a Credly badge or a
+#         course-completion page
+#   file: name of a certificate PDF/image you put in assets/certificates/,
+#         e.g.  file: aws-ai-practitioner.pdf
 # ─────────────────────────────────────────────────────────────
 
 - name: Introduction to Model Context Protocol
