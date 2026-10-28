@@ -10,6 +10,31 @@
 # "url" is optional — add a credential link to make the card clickable.
 # ─────────────────────────────────────────────────────────────
 
+- name: Introduction to Model Context Protocol
+  issuer: Anthropic
+  date: Oct 2026
+  kind: ai
+
+- name: Introduction to agent skills
+  issuer: Anthropic
+  date: Sep 2026
+  kind: ai
+
+- name: Introduction to Claude Cowork
+  issuer: Anthropic
+  date: Sep 2026
+  kind: ai
+
+- name: Claude Platform 101
+  issuer: Anthropic
+  date: Aug 2026
+  kind: ai
+
+- name: Claude Code 101
+  issuer: Anthropic
+  date: Aug 2026
+  kind: ai
+
 - name: Claude 101
   issuer: Anthropic
   date: Feb 2026
