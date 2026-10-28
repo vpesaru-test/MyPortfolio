@@ -1,13 +1,24 @@
-<section id="skills">
-  {%- assign heading = "Technical" -%}{%- assign heading_em = "Skills" %}
-{% include section-header.html %}
-  <div class="skills-grid">
-    {%- for g in site.data.skills %}
-    <div class="skill-group">
-      <div class="skill-group-title">{{ g.group | escape }}</div>
-      <div class="skill-pills">
-        {%- for s in g.items %}
-        <span class="skill-pill">{{ s | escape }}</span>
+{%- assign s = site.data.skills -%}
+<section id="skills" class="section section-band">
+  {%- assign eyebrow = "Skills" -%}{%- assign heading = "Technical" -%}{%- assign heading_em = "Skills" -%}
+  {%- assign intro = "The tools I reach for first, followed by the full stack I've worked across." %}
+{% include section-head.html %}
+  {%- assign intro = nil %}
+  <div class="core-grid">
+    {%- for tool in s.core %}
+    <div class="core-tile reveal">
+      <span class="core-mono" aria-hidden="true">{{ tool | slice: 0, 2 }}</span>
+      <span class="core-name">{{ tool | escape }}</span>
+    </div>
+    {%- endfor %}
+  </div>
+  <div class="skill-groups">
+    {%- for g in s.groups %}
+    <div class="skill-group reveal">
+      <h3 class="skill-group-title">{{ g.group | escape }}</h3>
+      <div class="pill-row">
+        {%- for item in g.items %}
+        <span class="pill pill-dark">{{ item | escape }}</span>
         {%- endfor %}
       </div>
     </div>

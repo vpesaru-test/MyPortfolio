@@ -1,0 +1,7 @@
+  <div class="section-head">
+    <span class="eyebrow">{% if num < 10 %}0{% endif %}{{ num }} / {{ eyebrow }}</span>
+    <h2>{{ heading }} <em>{{ heading_em }}</em></h2>
+    {%- if intro %}
+    <p class="section-intro">{{ intro | escape }}</p>
+    {%- endif %}
+  </div>

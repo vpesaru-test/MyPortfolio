@@ -1,0 +1,10 @@
+<section class="stats-band" aria-label="At a glance">
+  <div class="stats-grid">
+    {%- for stat in site.data.profile.stats %}
+    <div class="stat">
+      <div class="stat-num">{{ stat.value }}{% if stat.suffix %}<span>{{ stat.suffix }}</span>{% endif %}</div>
+      <div class="stat-label">{{ stat.label | escape }}</div>
+    </div>
+    {%- endfor %}
+  </div>
+</section>

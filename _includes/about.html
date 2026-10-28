@@ -1,0 +1,25 @@
+{%- assign a = site.data.about -%}
+<section id="about" class="section">
+  <div class="about-shell">
+    <div class="about-kicker">
+      <span class="eyebrow">{% if num < 10 %}0{% endif %}{{ num }} / About Me</span>
+    </div>
+    <div class="about-copy">
+      <h2>{{ a.heading.before | escape }} <em>{{ a.heading.highlight | escape }}</em></h2>
+      {%- for para in a.paragraphs %}
+      <p>{{ para | escape }}</p>
+      {%- endfor %}
+    </div>
+    <div class="about-points">
+      {%- for pt in a.points %}
+      <div class="point-card reveal">
+        <span class="point-num">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+        <div>
+          <h3>{{ pt.title | escape }}</h3>
+          <p>{{ pt.text | escape }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

@@ -4,10 +4,12 @@
 # Optional fields (leave blank or delete to hide):
 #   gpa     → shown as a highlighted line, e.g. "GPA 3.8 / 4.0"
 #             or "First Class with Distinction (78%)"
+#   short   → 2–3 letters shown in the badge on the card (e.g. MS)
 #   honors  → awards, assistantships, scholarships, honour societies
 # ─────────────────────────────────────────────────────────────
 
 - degree: M.S. Technology Management
+  short: MS
   school: Southeast Missouri State University
   location: Cape Girardeau, MO, USA
   period: Jan 2015 – May 2016
@@ -15,6 +17,7 @@
   honors: ""
 
 - degree: B.Tech. Electronics & Computer Engineering
+  short: BT
   school: Balaji Institute of Technology and Science (JNTU Hyderabad)
   location: India
   period: 2008 – 2012

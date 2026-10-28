@@ -1,13 +1,25 @@
-<nav>
-  <a href="#" class="nav-logo">{{ site.data.profile.name }}</a>
-  <ul class="nav-links">
+{%- assign p = site.data.profile -%}
+{%- assign last_name = p.name | split: " " | last -%}
+<nav class="nav">
+  <a href="#top" class="nav-logo">{{ p.name | split: " " | first }}<span>{{ last_name | slice: 0 }}.</span></a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
     {%- if has_projects %}
     <li><a href="#projects">Projects</a></li>
     {%- endif %}
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#certifications">Certs</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <div class="nav-actions">
+    {%- if has_resume %}
+    <a class="btn btn-primary btn-sm" href="{{ p.resume_pdf }}" target="_blank" rel="noopener">Resume</a>
+    {%- endif %}
+    <button class="icon-btn theme-toggle" type="button" aria-label="Switch between light and dark mode">
+      <span class="theme-icon-dark" aria-hidden="true">☾</span>
+      <span class="theme-icon-light" aria-hidden="true">☀</span>
+    </button>
+    <button class="icon-btn menu-toggle" type="button" aria-label="Open menu" aria-controls="nav-links" aria-expanded="false">☰</button>
+  </div>
 </nav>

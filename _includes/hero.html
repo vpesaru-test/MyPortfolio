@@ -1,69 +1,33 @@
 {%- assign p = site.data.profile -%}
-{%- assign c = p.contact -%}
-<section class="hero">
-  <div class="hero-left">
-    <div class="hero-tag animate">{{ p.role | escape }}</div>
-    <h1 class="animate delay-1">{{ p.headline.before | escape }} <em>{{ p.headline.highlight | escape }}</em> {{ p.headline.after | escape }}</h1>
-    <div class="hero-ai-badges animate delay-2">
-      {%- for badge in p.badges %}
-      <span class="ai-badge">{{ badge | escape }}</span>
-      {%- endfor %}
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-text">
+      {%- if p.status and p.status != "" %}
+      <span class="status-pill animate"><span class="status-dot"></span>{{ p.status | escape }}</span>
+      {%- endif %}
+      <h1 class="animate delay-1">Hello, I'm <em>{{ p.greeting_name | default: p.name }}</em></h1>
+      <p class="hero-headline animate delay-1">{{ p.headline.before | escape }} <strong>{{ p.headline.highlight | escape }}</strong> {{ p.headline.after | escape }}</p>
+      <p class="hero-role animate delay-2">{{ p.role | escape }}</p>
+      <p class="hero-desc animate delay-2">{{ p.summary | escape }}</p>
+      <div class="hero-ctas animate delay-3">
+        <a href="{% if has_projects %}#projects{% else %}#experience{% endif %}" class="btn btn-primary">{% if has_projects %}View Projects{% else %}View Experience{% endif %}</a>
+        {%- if has_resume %}
+        <a href="{{ p.resume_pdf }}" class="btn btn-outline" target="_blank" rel="noopener">Download Resume</a>
+        {%- endif %}
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      </div>
+      <div class="hero-badges animate delay-4">
+        {%- for badge in p.badges %}
+        <span class="pill pill-teal">{{ badge | escape }}</span>
+        {%- endfor %}
+      </div>
     </div>
-    <p class="hero-desc animate delay-2">
-      {{ p.summary | escape }}
-    </p>
-    <div class="hero-ctas animate delay-3">
-      <a href="{% if has_projects %}#projects{% else %}#experience{% endif %}" class="btn-primary">{% if has_projects %}View Projects{% else %}View Experience{% endif %}</a>
-      <a href="#contact" class="btn-outline">Get In Touch</a>
-    </div>
-  </div>
-  <div class="hero-right animate delay-2">
     {%- if p.photo and p.photo != "" %}
-    <div class="hero-photo-wrap animate delay-1">
-      <div class="hero-photo-frame">
-        <img src="{{ p.photo | remove_first: '/' }}" alt="{{ p.name | escape }}" class="hero-photo" />
+    <div class="hero-photo animate delay-2">
+      <div class="hero-photo-ring">
+        <img src="{{ p.photo }}" alt="{{ p.name | escape }}" width="533" height="800">
       </div>
     </div>
     {%- endif %}
-    <div class="stats-grid">
-      {%- for stat in p.stats %}
-      <div class="stat-box">
-        <div class="stat-num">{{ stat.value }}{% if stat.suffix %}<span>{{ stat.suffix }}</span>{% endif %}</div>
-        <div class="stat-label">{{ stat.label | escape }}</div>
-      </div>
-      {%- endfor %}
-    </div>
-    <div class="contact-strip" id="contact">
-      {%- if c.email and c.email != "" %}
-      <div class="contact-item">
-        <div class="contact-icon">✉</div>
-        <a class="contact-link" href="mailto:{{ c.email }}">{{ c.email }}</a>
-      </div>
-      {%- endif %}
-      {%- if c.phone and c.phone != "" %}
-      <div class="contact-item">
-        <div class="contact-icon">✆</div>
-        <span>{{ c.phone }}</span>
-      </div>
-      {%- endif %}
-      {%- if c.location and c.location != "" %}
-      <div class="contact-item">
-        <div class="contact-icon">📍</div>
-        <span>{{ c.location | escape }}</span>
-      </div>
-      {%- endif %}
-      {%- if c.linkedin and c.linkedin != "" %}
-      <div class="contact-item">
-        <div class="contact-icon contact-icon-text">in</div>
-        <a class="contact-link" href="{{ c.linkedin }}" target="_blank" rel="noopener">{{ c.linkedin | remove: 'https://' | remove: 'www.' }}</a>
-      </div>
-      {%- endif %}
-      {%- if c.github and c.github != "" %}
-      <div class="contact-item">
-        <div class="contact-icon contact-icon-text">gh</div>
-        <a class="contact-link" href="{{ c.github }}" target="_blank" rel="noopener">{{ c.github | remove: 'https://' | remove: 'www.' }}</a>
-      </div>
-      {%- endif %}
-    </div>
   </div>
 </section>

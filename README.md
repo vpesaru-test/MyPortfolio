@@ -8,10 +8,11 @@ content lives in plain YAML files, and the page is generated from them on every 
 
 | To change…                                   | Edit this file                  |
 |----------------------------------------------|---------------------------------|
-| Name, headline, summary, badges, stats, contact | `_data/profile.yml`          |
+| Name, hero, status pill, stats, resume PDF, contact | `_data/profile.yml`      |
+| About section (intro + 3 focus cards)        | `_data/about.yml`               |
 | Featured projects                            | `_data/projects.yml`            |
 | Work history                                 | `_data/experience.yml`          |
-| Skills                                       | `_data/skills.yml`              |
+| Skills (core tool tiles + grouped lists)     | `_data/skills.yml`              |
 | Certifications                               | `_data/certifications.yml`      |
 | Education                                    | `_data/education.yml`           |
 | Profile photo                                | `assets/images/profile.jpg`     |
@@ -27,6 +28,7 @@ explaining its fields.
 ├── _config.yml            Jekyll settings
 ├── _data/                 ← your content
 │   ├── profile.yml
+│   ├── about.yml
 │   ├── projects.yml
 │   ├── experience.yml
 │   ├── skills.yml
@@ -36,7 +38,7 @@ explaining its fields.
 ├── _layouts/default.html  page shell (<head>, CSS, JS)
 ├── assets/
 │   ├── css/style.css
-│   ├── js/main.js         scroll fade-in animation
+│   ├── js/main.js         theme toggle, mobile menu, filters, animations
 │   └── images/profile.jpg
 └── index.html             assembles the sections in order
 ```
@@ -64,7 +66,17 @@ optional `url` to the credential.
 
 **Add a project** — follow the commented example in `_data/projects.yml`.
 The Projects section and its nav link appear automatically once the list has
-an entry, and the other sections renumber themselves.
+an entry, and the other sections renumber themselves. Give projects a
+`category` and filter buttons appear once there are two or more categories.
+
+**Add your resume** — put the PDF in `assets/` and set `resume_pdf` in
+`_data/profile.yml`. That adds a Resume button to the nav and hero, and a
+Resume section.
+
+**Show "Open to Opportunities"** — set `status` in `_data/profile.yml`.
+
+**Light / dark mode** — the moon/sun button in the nav switches themes and
+remembers the choice; by default the site follows the visitor's system setting.
 
 YAML tips: indentation must be spaces, not tabs. Wrap a value in quotes if it
 contains a colon (`"AI Fluency: Framework & Foundations"`).

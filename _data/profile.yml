@@ -1,24 +1,21 @@
 # ─────────────────────────────────────────────────────────────
-# Profile — name, headline, hero section, and contact details.
+# Profile — name, hero section, stats, contact details.
 # ─────────────────────────────────────────────────────────────
 
 name: Vidyullatha Pesaru
+greeting_name: Vidyullatha                      # hero reads "Hello, I'm <greeting_name>"
 page_title: Senior QA Engineer                  # browser tab: "<name> — <page_title>"
-role: Senior QA Engineer & Test Architect       # small tag above the headline
+role: Senior QA Engineer & Test Architect       # line under the headline
 tagline: Senior QA Engineer · Test Automation Architect   # shown in the footer
 
-# Headline is split into three parts so the middle can be highlighted.
+# Optional pill above the greeting, e.g. "Open to Opportunities". Leave blank to hide.
+status: ""
+
+# Headline under the greeting, split so the middle part is highlighted.
 headline:
   before: "Bridging"
   highlight: "Quality Engineering"
   after: "with AI"
-
-# Badges under the headline
-badges:
-  - "☁ AWS Certified AI Practitioner"
-  - "✦ Claude 101 · Anthropic"
-  - "✦ AI Fluency · Anthropic"
-  - "✦ AI For Everyone · DeepLearning.AI"
 
 summary: >-
   Over 10 years engineering test automation frameworks, mobile testing
@@ -26,9 +23,21 @@ summary: >-
   domains — now bringing AI into Quality Engineering with certifications from
   AWS, Anthropic, and DeepLearning.AI.
 
-photo: /assets/images/profile.jpg
+# Pills under the hero buttons
+badges:
+  - "☁ AWS Certified AI Practitioner"
+  - "✦ Claude 101 · Anthropic"
+  - "✦ AI Fluency · Anthropic"
+  - "✦ AI For Everyone · DeepLearning.AI"
 
-# Stat boxes on the right of the hero. "suffix" is optional and shown in accent colour.
+photo: assets/images/profile.jpg
+
+# Resume PDF. Put the file in assets/ (e.g. assets/Vidyullatha-Pesaru-Resume.pdf)
+# and set the path here. When set, a "Resume" button appears in the nav and
+# hero, and a Resume section is added. Leave blank to hide all three.
+resume_pdf: ""
+
+# Stats band under the hero. "suffix" is optional and shown in accent colour.
 stats:
   - { value: "10", suffix: "+", label: "Years Experience" }
   - { value: "3",               label: "Major Employers" }
@@ -36,8 +45,12 @@ stats:
   - { value: "10", suffix: "+", label: "Certifications" }
 
 contact:
+  heading: "Let's Connect"
+  blurb: >-
+    Open to conversations about QA leadership, test automation architecture,
+    and bringing AI into quality engineering.
   phone: "(737) 235-6759"
   location: "United States"
   linkedin: "https://www.linkedin.com/in/vidyullathapesaru"
-  email: ""      # fill in to show an email link in the hero and footer
+  email: ""      # fill in to show an email button
   github: ""     # e.g. https://github.com/vpesaru-test — shown when filled in

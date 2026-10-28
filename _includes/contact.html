@@ -1,0 +1,25 @@
+{%- assign c = site.data.profile.contact -%}
+<section id="contact" class="section contact">
+  <span class="eyebrow">Contact</span>
+  <h2>{{ c.heading | default: "Let's Connect" | escape }}</h2>
+  {%- if c.blurb %}
+  <p class="contact-blurb">{{ c.blurb | escape }}</p>
+  {%- endif %}
+  <div class="contact-links">
+    {%- if c.email and c.email != "" %}
+    <a class="contact-link" href="mailto:{{ c.email }}"><span aria-hidden="true">✉</span>{{ c.email }}</a>
+    {%- endif %}
+    {%- if c.phone and c.phone != "" %}
+    <a class="contact-link" href="tel:{{ c.phone | remove: '(' | remove: ')' | remove: ' ' | remove: '-' }}"><span aria-hidden="true">✆</span>{{ c.phone }}</a>
+    {%- endif %}
+    {%- if c.linkedin and c.linkedin != "" %}
+    <a class="contact-link" href="{{ c.linkedin }}" target="_blank" rel="noopener"><span aria-hidden="true">in</span>LinkedIn</a>
+    {%- endif %}
+    {%- if c.github and c.github != "" %}
+    <a class="contact-link" href="{{ c.github }}" target="_blank" rel="noopener"><span aria-hidden="true">gh</span>GitHub</a>
+    {%- endif %}
+  </div>
+  {%- if c.location and c.location != "" %}
+  <p class="contact-location">📍 {{ c.location | escape }}</p>
+  {%- endif %}
+</section>

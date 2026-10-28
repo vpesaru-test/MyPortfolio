@@ -1,22 +1,4 @@
 {%- assign p = site.data.profile -%}
-{%- assign c = p.contact -%}
-<footer>
-  <div>
-    <div class="footer-name">{{ p.name }}</div>
-    <div class="footer-tagline">{{ p.tagline | escape }}</div>
-  </div>
-  <div class="footer-contact">
-    {%- if c.email and c.email != "" %}
-    <a href="mailto:{{ c.email }}">{{ c.email }}</a>
-    {%- endif %}
-    {%- if c.phone and c.phone != "" %}
-    <a href="tel:{{ c.phone | remove: '(' | remove: ')' | remove: ' ' | remove: '-' }}">{{ c.phone }}</a>
-    {%- endif %}
-    {%- if c.linkedin and c.linkedin != "" %}
-    <a href="{{ c.linkedin }}" target="_blank" rel="noopener">{{ c.linkedin | remove: 'https://' | remove: 'www.' }}</a>
-    {%- endif %}
-    {%- if c.github and c.github != "" %}
-    <a href="{{ c.github }}" target="_blank" rel="noopener">{{ c.github | remove: 'https://' | remove: 'www.' }}</a>
-    {%- endif %}
-  </div>
+<footer class="footer">
+  <p>© <span class="js-year">{{ site.time | date: "%Y" }}</span> {{ p.name }} · {{ p.tagline | escape }}</p>
 </footer>

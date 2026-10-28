@@ -1,14 +1,19 @@
 # ─────────────────────────────────────────────────────────────
-# Featured projects — the section appears on the site, and in the
-# nav, as soon as this list has at least one entry.
+# Featured projects — the section (and its nav link) appears as soon
+# as this list has at least one entry.
 #
-# Write each one as problem → approach → tools → results, and put
-# numbers in "results" wherever you can.
+# Each project shows as a card. "summary" is always visible; problem,
+# approach and results sit behind a "Read case study" toggle.
+# "category" drives the filter buttons above the grid (they appear
+# once projects span two or more categories).
 #
 # Example (remove the leading "# " from each line to use it):
 #
 # - title: Bruno API Regression Suite
+#   category: API Testing
 #   context: Truist Bank · 2025
+#   summary: >-
+#     One or two sentences a recruiter can read in five seconds.
 #   problem: >-
 #     What was slow, risky, or missing before you started?
 #   approach: >-

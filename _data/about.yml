@@ -1,0 +1,33 @@
+# ─────────────────────────────────────────────────────────────
+# About section — a short intro plus three numbered focus cards.
+# DRAFT copy written from your existing site content: edit freely.
+# ─────────────────────────────────────────────────────────────
+
+heading:
+  before: "Quality engineering that"
+  highlight: "teams can rely on"
+
+paragraphs:
+  - >-
+    I'm a Senior QA Engineer and Test Automation Architect with 10+ years in
+    banking, fintech, and healthcare. I design automation frameworks, API
+    validation suites, and mobile test pipelines that hold up release after
+    release.
+  - >-
+    Today I'm focused on bringing AI into quality engineering — using LLM
+    tooling and agentic workflows to make test creation and maintenance faster
+    without lowering the bar for coverage or rigor.
+
+points:
+  - title: Automation Architecture
+    text: >-
+      Reusable frameworks in Java with Appium, Selenium, and TestNG, built to
+      run in CI from day one.
+  - title: API & Mobile Quality
+    text: >-
+      REST and SOAP validation with Bruno, RestAssured, Postman, and ReadyAPI,
+      plus native iOS and Android testing.
+  - title: AI-Assisted QA
+    text: >-
+      Agentic QA workflows with GitLab Duo and LLM tooling, backed by AWS and
+      Anthropic AI certifications.

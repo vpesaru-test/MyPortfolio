@@ -1,0 +1,15 @@
+{%- assign p = site.data.profile -%}
+<section id="resume" class="section section-alt">
+  {%- assign eyebrow = "Resume" -%}{%- assign heading = "My" -%}{%- assign heading_em = "Resume" %}
+{% include section-head.html %}
+  <div class="resume-card reveal">
+    <div>
+      <h3>{{ p.name }}</h3>
+      <p>{{ p.tagline | escape }}</p>
+    </div>
+    <div class="resume-actions">
+      <a class="btn btn-primary" href="{{ p.resume_pdf }}" download>Download PDF</a>
+      <a class="btn btn-outline" href="{{ p.resume_pdf }}" target="_blank" rel="noopener">Open in browser</a>
+    </div>
+  </div>
+</section>

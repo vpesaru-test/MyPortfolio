@@ -3,32 +3,48 @@ layout: default
 ---
 {%- comment -%}
   Page structure. Content lives in _data/*.yml; markup for each
-  section lives in _includes/. Section numbers (01 /, 02 / …) are
-  assigned in order, so adding or removing a section renumbers the rest.
+  section lives in _includes/. Numbered sections (01 /, 02 / …) are
+  numbered in order, so adding or removing one renumbers the rest.
+  Projects and Resume only appear when they have content.
 {%- endcomment -%}
 {%- assign has_projects = false -%}
 {%- if site.data.projects.size > 0 -%}{%- assign has_projects = true -%}{%- endif -%}
+{%- assign has_resume = false -%}
+{%- if site.data.profile.resume_pdf and site.data.profile.resume_pdf != "" -%}{%- assign has_resume = true -%}{%- endif -%}
 
 {% include nav.html %}
 
+<main>
 {% include hero.html %}
 
+{% include stats.html %}
+
 {%- assign n = 0 -%}
+{%- assign n = n | plus: 1 -%}{%- assign num = n -%}
+{% include about.html %}
+
+{%- assign n = n | plus: 1 -%}{%- assign num = n -%}
+{% include skills.html %}
+
+{%- assign n = n | plus: 1 -%}{%- assign num = n -%}
+{% include experience.html %}
+
 {%- if has_projects -%}
 {%- assign n = n | plus: 1 -%}{%- assign num = n -%}
 {% include projects.html %}
 {%- endif -%}
 
 {%- assign n = n | plus: 1 -%}{%- assign num = n -%}
-{% include experience.html %}
-
-{%- assign n = n | plus: 1 -%}{%- assign num = n -%}
-{% include skills.html %}
-
-{%- assign n = n | plus: 1 -%}{%- assign num = n -%}
-{% include certifications.html %}
-
-{%- assign n = n | plus: 1 -%}{%- assign num = n -%}
 {% include education.html %}
 
+{%- if has_resume -%}
+{%- assign n = n | plus: 1 -%}{%- assign num = n -%}
+{% include resume.html %}
+{%- endif -%}
+
+{% include contact.html %}
+</main>
+
 {% include footer.html %}
+
+<button class="to-top" type="button" aria-label="Back to top">↑</button>

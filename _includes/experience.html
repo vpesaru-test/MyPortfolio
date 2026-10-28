@@ -1,32 +1,38 @@
-<section id="experience">
-  {%- assign heading = "Professional" -%}{%- assign heading_em = "Experience" %}
-{% include section-header.html %}
+<section id="experience" class="section">
+  {%- assign eyebrow = "Experience" -%}{%- assign heading = "Professional" -%}{%- assign heading_em = "Experience" %}
+{% include section-head.html %}
   <div class="exp-list">
     {%- for job in site.data.experience %}
-    <div class="exp-item">
-      <div class="exp-meta">
-        <span class="exp-period">{{ job.period }}</span>
-        <div class="exp-company">{{ job.company | escape }}</div>
-        <div class="exp-location">{{ job.location | escape }}</div>
-      </div>
-      <div class="exp-content">
-        <div class="exp-role">{{ job.role | escape }}</div>
-        <p class="exp-desc">
-          {{ job.description | escape }}
-        </p>
-        <div class="exp-tags">
-          {%- for t in job.tags.primary %}
-          <span class="tag accent">{{ t | escape }}</span>
-          {%- endfor %}
-          {%- for t in job.tags.secondary %}
-          <span class="tag teal">{{ t | escape }}</span>
-          {%- endfor %}
-          {%- for t in job.tags.other %}
-          <span class="tag">{{ t | escape }}</span>
-          {%- endfor %}
+    {%- assign is_current = false -%}
+    {%- if job.period contains "Present" -%}{%- assign is_current = true -%}{%- endif %}
+    <article class="exp-card reveal">
+      <div class="exp-top">
+        <div class="exp-mono" aria-hidden="true">{{ job.company | slice: 0 }}</div>
+        <div class="exp-heading">
+          <h3>{{ job.role | escape }}</h3>
+          <p class="exp-company">{{ job.company | escape }} · {{ job.location | escape }}</p>
+        </div>
+        <div class="exp-when">
+          <span class="exp-period">{{ job.period }}</span>
+          {%- if is_current %}
+          <span class="pill pill-accent pill-xs">Current</span>
+          {%- endif %}
         </div>
       </div>
-    </div>
+      <p class="exp-desc">{{ job.description | escape }}</p>
+      {%- if job.highlights %}
+      <ul class="exp-highlights">
+        {%- for h in job.highlights %}
+        <li>{{ h | escape }}</li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
+      <div class="pill-row">
+        {%- for t in job.tags.primary %}<span class="pill pill-accent">{{ t | escape }}</span>{% endfor -%}
+        {%- for t in job.tags.secondary %}<span class="pill pill-teal">{{ t | escape }}</span>{% endfor -%}
+        {%- for t in job.tags.other %}<span class="pill">{{ t | escape }}</span>{% endfor -%}
+      </div>
+    </article>
     {%- endfor %}
   </div>
 </section>

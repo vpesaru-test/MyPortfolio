@@ -1,34 +1,46 @@
-<section id="projects">
-  {%- assign heading = "Featured" -%}{%- assign heading_em = "Projects" %}
-{% include section-header.html %}
-  <div class="project-list">
+{%- assign categories = site.data.projects | map: "category" | compact | uniq -%}
+<section id="projects" class="section section-alt">
+  {%- assign eyebrow = "Projects" -%}{%- assign heading = "Featured" -%}{%- assign heading_em = "Projects" -%}
+  {%- assign intro = "Selected work, each written up as problem, approach, and measurable results." %}
+{% include section-head.html %}
+  {%- assign intro = nil %}
+  {%- if categories.size > 1 %}
+  <div class="filter-bar" role="group" aria-label="Filter projects">
+    <button type="button" class="filter-chip is-active" data-filter="all" aria-pressed="true">All</button>
+    {%- for c in categories %}
+    <button type="button" class="filter-chip" data-filter="{{ c | slugify }}" aria-pressed="false">{{ c | escape }}</button>
+    {%- endfor %}
+  </div>
+  {%- endif %}
+  <div class="project-grid">
     {%- for project in site.data.projects %}
-    <article class="project-card">
-      <div class="project-head">
-        {%- if project.context %}
-        <span class="project-context">{{ project.context | escape }}</span>
-        {%- endif %}
-        <h3 class="project-title">
-          {%- if project.link %}<a href="{{ project.link }}" target="_blank" rel="noopener">{{ project.title | escape }} ↗</a>
-          {%- else %}{{ project.title | escape }}{% endif -%}
-        </h3>
+    <article class="project-card reveal" data-category="{{ project.category | slugify }}">
+      <div class="project-meta">
+        {%- if project.category %}<span class="project-category">{{ project.category | escape }}</span>{% endif -%}
+        {%- if project.context %}<span class="project-context">{{ project.context | escape }}</span>{% endif %}
       </div>
-      <div class="project-body">
+      <h3 class="project-title">{{ project.title | escape }}</h3>
+      {%- if project.summary %}
+      <p class="project-summary">{{ project.summary | escape }}</p>
+      {%- endif %}
+      {%- if project.problem or project.approach or project.results %}
+      <details class="case-study">
+        <summary>Read case study</summary>
         {%- if project.problem %}
-        <div class="project-block">
-          <div class="project-label">Problem</div>
+        <div class="case-block">
+          <h4>Problem</h4>
           <p>{{ project.problem | escape }}</p>
         </div>
         {%- endif %}
         {%- if project.approach %}
-        <div class="project-block">
-          <div class="project-label">Approach</div>
+        <div class="case-block">
+          <h4>Approach</h4>
           <p>{{ project.approach | escape }}</p>
         </div>
         {%- endif %}
         {%- if project.results %}
-        <div class="project-block project-results">
-          <div class="project-label">Results</div>
+        <div class="case-block">
+          <h4>Results</h4>
           <ul>
             {%- for r in project.results %}
             <li>{{ r | escape }}</li>
@@ -36,14 +48,18 @@
           </ul>
         </div>
         {%- endif %}
-      </div>
-      {%- if project.tools %}
-      <div class="exp-tags">
-        {%- for t in project.tools %}
-        <span class="tag teal">{{ t | escape }}</span>
-        {%- endfor %}
-      </div>
+      </details>
       {%- endif %}
+      <div class="project-foot">
+        {%- if project.tools %}
+        <div class="pill-row">
+          {%- for t in project.tools %}<span class="pill pill-teal">{{ t | escape }}</span>{% endfor -%}
+        </div>
+        {%- endif %}
+        {%- if project.link %}
+        <a class="btn btn-outline btn-sm" href="{{ project.link }}" target="_blank" rel="noopener">View code ↗</a>
+        {%- endif %}
+      </div>
     </article>
     {%- endfor %}
   </div>
