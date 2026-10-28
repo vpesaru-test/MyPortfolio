@@ -15,7 +15,7 @@
   items: [TestNG, JUnit, Cucumber, Jasmine, XCTest, Espresso]
 
 - group: CI/CD & DevOps
-  items: [Jenkins, GoCD, Maven, Ant, Docker, GitHub, BitBucket, SVN]
+  items: [GitLab, Jenkins, GoCD, Maven, Ant, Docker, GitHub, BitBucket, SVN]
 
 - group: Databases
   items: [MySQL, Oracle 11g/12c, SQL Server 2014, PL/SQL]
