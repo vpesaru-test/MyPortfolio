@@ -18,21 +18,25 @@
   issuer: Anthropic
   date: Oct 2026
   kind: ai
+  url: https://verify.skilljar.com/c/xcgb7k4i7wu5
 
 - name: Introduction to agent skills
   issuer: Anthropic
   date: Sep 2026
   kind: ai
+  url: https://verify.skilljar.com/c/9fa7bmumoo7d
 
 - name: Introduction to Claude Cowork
   issuer: Anthropic
   date: Sep 2026
   kind: ai
-
+  url: https://verify.skilljar.com/c/9fa7bmumoo7d
+  
 - name: Claude Platform 101
   issuer: Anthropic
   date: Aug 2026
   kind: ai
+  url: https://verify.skilljar.com/c/9fa7bmumoo7d
 
 - name: Claude Code 101
   issuer: Anthropic
