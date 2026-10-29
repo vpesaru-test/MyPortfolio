@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Portfolio UI Tests" verbose="1">
+  <test name="Smoke">
+    <classes>
+      <class name="com.vidyullatha.portfolio.tests.SmokeTest"/>
+    </classes>
+  </test>
+  <test name="Navigation">
+    <classes>
+      <class name="com.vidyullatha.portfolio.tests.NavigationTest"/>
+    </classes>
+  </test>
+  <test name="Content matches _data">
+    <classes>
+      <class name="com.vidyullatha.portfolio.tests.HeroTest"/>
+      <class name="com.vidyullatha.portfolio.tests.ContentTest"/>
+      <class name="com.vidyullatha.portfolio.tests.CertificationsTest"/>
+      <class name="com.vidyullatha.portfolio.tests.ContactTest"/>
+    </classes>
+  </test>
+  <test name="Theme, responsive and accessibility">
+    <classes>
+      <class name="com.vidyullatha.portfolio.tests.ThemeTest"/>
+      <class name="com.vidyullatha.portfolio.tests.ResponsiveTest"/>
+      <class name="com.vidyullatha.portfolio.tests.AccessibilityTest"/>
+    </classes>
+  </test>
+</suite>
