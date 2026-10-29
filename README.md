@@ -1,5 +1,7 @@
 # Vidyullatha Pesaru — Portfolio
 
+[![UI Tests](https://github.com/vpesaru-test/MyPortfolio/actions/workflows/ui-tests.yml/badge.svg)](https://github.com/vpesaru-test/MyPortfolio/actions/workflows/ui-tests.yml)
+
 Personal portfolio site for a Senior QA Engineer & Test Automation Architect.
 Built with [Jekyll](https://jekyllrb.com/), which GitHub Pages runs automatically:
 content lives in plain YAML files, and the page is generated from them on every push.
@@ -40,7 +42,9 @@ explaining its fields.
 │   ├── css/style.css
 │   ├── js/main.js         theme toggle, mobile menu, filters, animations
 │   └── images/profile.jpg
-└── index.html             assembles the sections in order
+├── index.html             assembles the sections in order
+├── tests/                 Java + Playwright + TestNG UI test suite (see tests/README.md)
+└── .github/workflows/     CI: runs the UI tests on every push
 ```
 
 ## Common edits
@@ -101,3 +105,10 @@ bundle exec jekyll serve
 
 Then open http://localhost:4000. Opening `index.html` directly in a browser
 will **not** work, because the page has to be generated first.
+
+## Automated tests
+
+`tests/` holds an end-to-end UI test suite in Java (Playwright + TestNG + Maven).
+It reads the same `_data/*.yml` files as the site and checks the rendered page
+against them, and GitHub Actions runs it in Chromium, Firefox and WebKit on every
+push. See [tests/README.md](tests/README.md) for what it covers and how to run it.

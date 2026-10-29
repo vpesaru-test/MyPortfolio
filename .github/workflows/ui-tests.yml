@@ -1,0 +1,74 @@
+# Builds the site exactly like GitHub Pages does, serves it locally, and runs the
+# Java + Playwright + TestNG suite in tests/ against it in three browsers.
+name: UI Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ui-tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ui-tests:
+    name: UI tests (${{ matrix.browser }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox, webkit]
+
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Build site (same builder GitHub Pages uses)
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+
+      - name: Serve site on localhost:4000
+        run: |
+          python3 -m http.server 4000 --directory _site > /dev/null 2>&1 &
+          for i in $(seq 1 30); do
+            curl -sf http://localhost:4000/ > /dev/null && exit 0
+            sleep 1
+          done
+          echo "Site did not start" && exit 1
+
+      - name: Set up Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+          cache-dependency-path: tests/pom.xml
+
+      - name: Install ${{ matrix.browser }}
+        working-directory: tests
+        run: >
+          mvn -B -q exec:java -e
+          -Dexec.mainClass=com.microsoft.playwright.CLI
+          -Dexec.args="install --with-deps ${{ matrix.browser }}"
+
+      - name: Run tests
+        working-directory: tests
+        run: mvn -B test -Dbrowser=${{ matrix.browser }} -DbaseUrl=http://localhost:4000/
+
+      - name: Upload report and failure screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report-${{ matrix.browser }}
+          path: |
+            tests/target/surefire-reports/
+            tests/target/screenshots/
+          if-no-files-found: ignore
