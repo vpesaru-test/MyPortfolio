@@ -4,3 +4,5 @@ _site/
 Gemfile.lock
 .DS_Store
 tests/target/
+tests/install.log
+tests/test.log

@@ -18,7 +18,8 @@ concurrency:
 jobs:
   ui-tests:
     name: UI tests (${{ matrix.browser }})
-    runs-on: ubuntu-latest
+    # Pinned: Playwright's browser installer supports this Ubuntu release
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     strategy:
       fail-fast: false
@@ -27,7 +28,7 @@ jobs:
 
     steps:
       - name: Check out
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Build site (same builder GitHub Pages uses)
         uses: actions/jekyll-build-pages@v1
@@ -42,10 +43,11 @@ jobs:
             curl -sf http://localhost:4000/ > /dev/null && exit 0
             sleep 1
           done
-          echo "Site did not start" && exit 1
+          echo "::error::Site did not start on localhost:4000"
+          exit 1
 
       - name: Set up Java 21
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '21'
@@ -54,14 +56,32 @@ jobs:
 
       - name: Install ${{ matrix.browser }}
         working-directory: tests
-        run: >
-          mvn -B -q exec:java -e
-          -Dexec.mainClass=com.microsoft.playwright.CLI
-          -Dexec.args="install --with-deps ${{ matrix.browser }}"
+        run: |
+          set +e
+          mvn -B exec:java -e \
+            -Dexec.mainClass=com.microsoft.playwright.CLI \
+            -Dexec.args="install --with-deps ${{ matrix.browser }}" 2>&1 | tee install.log
+          status=${PIPESTATUS[0]}
+          if [ "$status" -ne 0 ]; then
+            grep -E 'ERROR|Error|error' install.log | tail -8 | while IFS= read -r line; do echo "::error title=Install ${{ matrix.browser }}::$line"; done
+          fi
+          exit $status
 
       - name: Run tests
         working-directory: tests
-        run: mvn -B test -Dbrowser=${{ matrix.browser }} -DbaseUrl=http://localhost:4000/
+        run: |
+          set +e
+          mvn -B test -Dbrowser=${{ matrix.browser }} -DbaseUrl=http://localhost:4000/ 2>&1 | tee test.log
+          status=${PIPESTATUS[0]}
+          if [ "$status" -ne 0 ] && [ ! -f target/surefire-reports/testng-results.xml ]; then
+            grep -E '^\[ERROR\]' test.log | head -10 | while IFS= read -r line; do echo "::error title=Build ${{ matrix.browser }}::$line"; done
+          fi
+          exit $status
+
+      - name: Summarize results
+        if: always()
+        working-directory: tests
+        run: python3 ../.github/scripts/test_summary.py target/surefire-reports/testng-results.xml ${{ matrix.browser }}
 
       - name: Upload report and failure screenshots
         if: always()
