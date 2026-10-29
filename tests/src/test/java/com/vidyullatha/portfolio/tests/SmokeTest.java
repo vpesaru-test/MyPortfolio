@@ -26,7 +26,8 @@ public class SmokeTest extends BaseTest {
         assertEquals(response.status(), 200, "HTTP status of " + Config.baseUrl());
 
         String name = SiteData.str(SiteData.profile(), "name");
-        assertThat(page).hasTitle(Pattern.compile("^" + Pattern.quote(name) + " — "));
+        String title = page.title();
+        assertTrue(title.startsWith(name + " — "), "Title should start with the profile name, but was: " + title);
     }
 
     @Test(description = "Stylesheet and script are served")
